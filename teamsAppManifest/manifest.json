@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0",
+  "id": "84a5f75c-dd45-4c59-b4c0-27fd18e0ff06",
+  "packageName": "com.microsoft.teams.samples",
+  "developer": {
+    "name": "Microsoft",
+    "websiteUrl": "https://dev.botframework.com",
+    "privacyUrl": "https://privacy.microsoft.com",
+    "termsOfUseUrl": "https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx"
+  },
+  "name": {
+    "short": "Text To Pay",
+    "full": "Text To Pay"
+  },
+  "description": {
+    "short": "Text To Pay",
+    "full": "Text To Pay"
+  },
+  "icons": {
+    "outline": "icon-color.png",
+    "color": "icon-color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "composeExtensions": [
+    {
+      "botId": "84a5f75c-dd45-4c59-b4c0-27fd18e0ff06",
+      "commands": [
+        {
+          "id": "createCard",
+          "type": "action",
+          "context": [ "compose" ],
+          "description": "Command to run action to create a Card from Compose Box",
+          "title": "choose options",
+          "parameters": [
+            {
+              "name": "title",
+              "title": "Choose The Product",
+              "description": "Title for the card",
+              "inputType": "choiceset",
+              "choices": [
+                        {
+                            "title": "Starter Package - $29.99",
+                            "value": "spackage"
+                        },
+                        {
+                            "title": "Professional Edition - $49.99",
+                            "value": "pedition"
+                        },
+                        {
+                            "title": "Enterprise Edition - $99.99",
+                            "value": "eedition"
+                        }
+              ]
+
+            },
+            {
+              "name": "text",
+              "title": "Thank You Message",
+              "description": "Write a thank you message here!",
+              "inputType": "textarea"
+            }
+          ]
+        },
+        {
+          "id": "shareMessage",
+          "type": "action",
+          "context": [ "message" ],
+          "description": "Test command to run action on message context (message sharing)",
+          "title": "Share Message",
+          "parameters": [
+            {
+              "name": "includeImage",
+              "title": "Include Image",
+              "description": "Include image in Hero Card",
+              "inputType": "toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "permissions": [
+    "identity"
+  ]
+}
